@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "url": "https://cdn.pixabay.com/photo/2018/12/23/09/31/adult-3890782_1280.jpg",
+    "name": "Tintin",
+    "price": 50,
+    "promo": 20,
+    "description":"Et veniam adipisicing dolore tempor veniam aliqua excepteur irure ex irure aliquip exercitation ex. Excepteur minim irure irure exercitation velit ut incididunt nisi veniam exercitation. Eu commodo cupidatat aliquip et anim aute aute sunt amet excepteur ullamco. Enim aute cillum in tempor. Sint qui quis velit aliqua irure."
+  },
+
+  {
+    "id": 1,
+    "url": "https://cdn.pixabay.com/photo/2018/12/23/09/27/adult-3890778_1280.jpg",
+    "name": "Tournesol",
+    "price": 50,
+    "description":"Sit ut nisi cillum enim est velit aliqua labore. Culpa sit enim sunt cillum minim fugiat occaecat id dolore velit. Reprehenderit sunt ad commodo eiusmod cillum culpa commodo. Mollit deserunt nisi laborum qui nostrud enim deserunt nostrud magna ullamco duis."
+  },
+
+  {
+    "id": 2,
+    "url": "https://cdn.pixabay.com/photo/2018/12/23/09/30/adult-3890780_1280.jpg",
+    "name": "Capital Haddock",
+    "price": 50,
+    "description":"Qui voluptate aute ullamco tempor ex sit enim esse voluptate est excepteur sint. Nisi Lorem consequat fugiat Lorem. Proident nostrud eu dolore sunt et incididunt consequat. Labore irure duis pariatur non ipsum enim id incididunt excepteur fugiat amet deserunt qui cillum."
+  },
+
+  {
+    "id": 3,
+    "url": "https://cdn.pixabay.com/photo/2018/12/23/09/28/adult-3890779_1280.jpg",
+    "name": "Dupont et Dupont",
+    "price": 50,
+    "description":"Velit ullamco est esse fugiat fugiat esse nulla elit eiusmod eu. Fugiat sunt aliquip ea occaecat culpa aliqua ea quis amet do aliqua elit. Est aliquip ipsum proident tempor eiusmod culpa quis id cupidatat cupidatat commodo nisi aute. Reprehenderit culpa sint consequat culpa duis fugiat. Non laboris qui nostrud exercitation consequat officia sit eu pariatur commodo pariatur officia nisi dolor. Nulla nostrud eiusmod qui dolore occaecat consequat."
+  }
+]

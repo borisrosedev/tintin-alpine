@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Boris Rose" />
+    <meta
+      name="description"
+      content="Page du Shop de l'Application Shop, figurines de Tinte et Milou"
+    />
+    <meta name="keywords" content="Shop, figurines, Tintin et Milou" />
+    <title>Shop | Shop Page</title>
+    <link rel="icon" type="image/png" href="../../public/assets/favicon.png" />
+    <link rel="stylesheet" href="../../public/css/fonts/font.css" />
+    <link rel="stylesheet" href="../../public/css/base/variables.css" />
+    <link rel="stylesheet" href="../../public/css/base/reset.css" />
+    <link rel="stylesheet" href="../../public/css/utils/objects.css" />
+    <link rel="stylesheet" href="../../public/css/utils/keyframes.css" />
+    <link rel="stylesheet" href="../../public/css/components/spinner.css" />
+    <link rel="stylesheet" href="../../public/css/layout/header.css" />
+    <!-- LA PAGE CHANGE !!!! donc plus de référence à landing.css -->
+    <link rel="stylesheet" href="../../public/css/pages/shop.css" />
+    <link rel="stylesheet" href="../../public/css/layout/footer.css" />
+    <!-- SCRIPT JS  FONTAWESOME-->
+    <script
+      src="https://kit.fontawesome.com/3b3c8e71e5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div aria-label="outlay du spinner" class="app__spinner">
+      <div class="outer__spinner">
+        <figure class="inner__spinner">
+          <img src="../../public/assets/favicon.png" />
+        </figure>
+      </div>
+      <p>Chargement en cours ...</p>
+    </div>
+    <header class="app__header fixed-top app__header--slow">
+      <section>
+        <figure>
+          <img src="../../public/assets/favicon.png" alt="logo de Shop" />
+        </figure>
+        <span aria-label="conteneur du titre de l'application"> Shop </span>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">
+              <i class="fa-solid fa-home"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./cart.html">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./login.html">
+              <i class="fa-solid fa-sign-in"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="shop__main page">
+      <header>
+        <h1>Les figurines sur le thème de Tintin et Milou</h1>
+      </header>
+      <section x-data>
+        <template x-for="product in $store.stock.products">
+          <article>
+            <figure>
+              <img
+                :src="product.url"
+                :alt="product.name"
+              />
+              <figcaption>
+                <span aria-label="Identité de la figurine" x-text="product.name"></span>
+              </figcaption>
+              <template x-if="product.promo">
+                <span aria-label="promo de la figurine" x-text="`${product.promo} €`"></span>
+              </template>
+      
+            </figure>
+            <section>
+              <h2 x-text="product.name"></h2>
+              <p x-text="product.description"></p>
+              <button @click="$store.stock.addToCart(product)">
+                <section><p>Ajouter au panier</p></section>
+                <section><span x-text="product.price"></span></section>
+              </button>
+            </section>
+          </article>
+      </template>
+       
+      
+
+      
+      </section>
+    </main>
+    <footer class="app__footer fixed-bottom app__footer--slow">
+      <p>Toutes les images sont sous &copy; Pixabay</p>
+    </footer>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

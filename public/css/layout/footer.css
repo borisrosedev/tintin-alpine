@@ -1,0 +1,14 @@
+.app__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: up 1s ease-in-out forwards;
+    color: white;
+}
+
+.app__footer--slow {
+    animation: up 1s ease-in-out var(--slow-time) forwards;
+}

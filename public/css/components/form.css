@@ -1,0 +1,88 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: var(--forth-color);
+    max-width: 600px;
+    min-width: 400px;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.form section {
+    margin: 5px;
+}
+
+.form input[type] { 
+    width: 100%;
+    margin-block: 5px;
+    border: solid #90ee90 1px;
+}
+
+
+.form input[type="text"]:valid, .form input[type="password"]:valid{
+    border: var(--primary-color) solid 1px;
+    color: var(--primary-color);
+}
+
+
+
+.form input[type="text"]:invalid, .form input[type="password"]:invalid{
+    border: rgb(239, 89, 89) solid 1px;
+    color: rgb(239, 89, 89);
+}
+
+
+.form__inputs :nth-child(3) {
+    display: flex;
+    align-items: center;
+
+}
+
+.form__inputs :nth-child(3) label {
+    display: flex;
+    margin-block: 5px;
+}
+
+.form__inputs :nth-child(3) input {
+    width: unset;
+    margin: unset;
+    padding: unset;
+    margin-left: 5px;
+   
+}
+
+.form__inputs :nth-child(3) :first-child {
+    font-size: 13px;
+}
+
+
+
+.form__actions {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form__actions :nth-child(1), 
+.form__actions :nth-child(2){
+    background-color: var(--primary-color);
+    color: whitesmoke;
+    opacity: 0.7;
+    transition: all 300ms ease-in-out;
+    width: 50%;
+    border: solid 0.4px black;
+}
+
+
+.form__actions button:hover {
+    opacity: 1;
+}
+
+.form__actions :nth-child(1):hover, .form__actions :nth-child(2):hover  {
+    width: 70%;
+}
+.form__actions :nth-child(1):hover + button {
+    width: 30%;
+}
+

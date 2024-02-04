@@ -1,0 +1,68 @@
+/*BLOC ELEMENT MODIFIER*/
+.app__header {
+  /* header est un élément de notre application d'oùm le __ avant lui*/
+  height: 8vh; /* cela veut dire que la taille de mon header 
+        représentera 8% de la taille de mon écran
+    */
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 0 10px;
+  box-shadow: 1px 1px 5px #808080;
+  background-color: var(--primary-color);
+  opacity: 0;
+  animation: down 1000ms ease-in-out forwards;
+
+}
+
+.app__header--slow {
+  animation: down 1000ms ease-in-out var(--slow-time) forwards;
+}
+
+.app__header > section {
+  display: flex;
+  align-items: center;
+}
+
+.app__header > section > span {
+  letter-spacing: 0.1rem;
+}
+
+.app__header > section > figure {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: solid rgb(0, 0, 0) 1px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.app__header > section > figure > img {
+  transform: scale(0.7);
+}
+
+.app__header > nav {
+  opacity: 0;
+  /* animation-name: left;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-delay: 1000ms; */
+  animation: left 1s ease-in-out 1s forwards;
+}
+
+.app__header ul {
+  display: flex;
+}
+
+.app__header ul li {
+  margin-inline: 10px;
+  transition: all 500ms ease-in-out;
+}
+
+
+.app__header a {
+  transition: all 500ms ease-in-out;
+}
+.app__header li:hover > a {
+  color: var(--forth-color);
+}

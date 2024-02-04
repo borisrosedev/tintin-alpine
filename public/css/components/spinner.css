@@ -1,0 +1,40 @@
+.app__spinner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: vanish var(--slow-time) ease-in-out forwards;
+}
+
+.outer__spinner {
+  width: 200px;
+  height: 200px;
+  border-top: solid 4px #87cefa;
+  border-left: solid 4px rgb(17, 255, 101);
+  border-right: solid 4px #800080;
+  border-bottom: solid 4px #ffff00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spinner 3000ms ease-in-out;
+}
+.inner__spinner {
+  width: 100px;
+  height: 100px;
+  transform: scale(0.8);
+  background-color: white;
+}
+
+.app__spinner p {
+  color: #fff;
+  margin: 30px;
+  animation: show 1000ms ease-in-out 3;
+}

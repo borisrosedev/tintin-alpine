@@ -1,0 +1,26 @@
+/*object oriented css*/
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* le z-index permet de jouer sur la position des éléments 
+        qui passera par-dessus l'autre ? 
+        le z-index par défaut des éléments est 0
+    */
+    z-index: 10;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.page {
+    padding-top: 8vh;
+    display: flex;
+}

@@ -1,0 +1,33 @@
+.success__main {
+ 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    opacity: 0;
+    animation: show 500ms ease-in-out 1s forwards;
+}
+
+.success__main > section   {
+
+    width: 300px;
+    height: 300px;
+    box-shadow: 1px 1px 5px #808080;
+    padding: 10px;
+    background-color: var(--forth-color);
+}
+
+.success__main section header {
+    text-align: center;
+}
+
+.success__main section i {
+
+    padding: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    margin: 20px 0;
+    color: white;
+    font-size: 20px;
+}
+

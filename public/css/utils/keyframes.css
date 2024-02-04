@@ -1,0 +1,78 @@
+@keyframes down {
+  /* en entrant */
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  /* en sortant */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes up {
+  /* enter */
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  /*leave*/
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes left {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes vanish {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -20;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(360deg);
+  }
+  /* 
+    25% {
+        
+    }
+
+    50% {
+
+    } */
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

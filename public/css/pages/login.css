@@ -1,0 +1,8 @@
+.login__main {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: down 1000ms ease-in-out 1000ms forwards;
+}

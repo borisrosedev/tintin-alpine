@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Boris Rose" />
+    <meta
+      name="description"
+      content="Page du Shop de l'Application Shop, figurines de Tinte et Milou"
+    />
+    <meta name="keywords" content="Shop, figurines, Tintin et Milou" />
+    <title>Shop | Cart Page</title>
+    <link rel="icon" type="image/png" href="../../public/assets/favicon.png" />
+    <link rel="stylesheet" href="../../public/css/fonts/font.css" />
+    <link rel="stylesheet" href="../../public/css/base/variables.css" />
+    <link rel="stylesheet" href="../../public/css/base/reset.css" />
+    <link rel="stylesheet" href="../../public/css/utils/objects.css" />
+    <link rel="stylesheet" href="../../public/css/utils/keyframes.css" />
+    <link rel="stylesheet" href="../../public/css/components/table.css" />
+    <link rel="stylesheet" href="../../public/css/layout/header.css" />
+    <!-- LA PAGE CHANGE !!!! donc plus de référence à landing.css -->
+    <link rel="stylesheet" href="../../public/css/pages/cart.css" />
+    <link rel="stylesheet" href="../../public/css/layout/footer.css" />
+    <!-- SCRIPT JS  FONTAWESOME-->
+    <script
+      src="https://kit.fontawesome.com/3b3c8e71e5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="app__header fixed-top">
+      <section>
+        <figure>
+          <img src="../../public/assets/favicon.png" alt="logo de Shop" />
+        </figure>
+        <span aria-label="conteneur du titre de l'application"> Shop </span>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">
+              <i class="fa-solid fa-home"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./shop.html">
+              <i class="fa-solid fa-shop"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./login.html">
+              <i class="fa-solid fa-sign-in"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="cart__main page">
+      <section>
+        <table class="table" border="collapse">
+          <thead>
+            <th scope="col">Nom</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <figure>
+                  <img
+                    src="../../public/assets/images/tintin.jpg"
+                    alt="tintin"
+                  />
+                </figure>
+                <span aria-label="nom de la figurine">Tintin </span>
+              </th>
+              <td>1</td>
+              <td>70€</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <figure>
+                  <img
+                    src="../../public/assets/images/haddock.jpg"
+                    alt="haddock"
+                  />
+                </figure>
+                <span aria-label="nom de la figurine">Haddock</span>
+              </th>
+              <td>1</td>
+              <td>25€</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Montant total</th>
+              <td>95€</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </main>
+    <footer class="app__footer fixed-bottom">
+      <p>Toutes les images sont sous &copy; Pixabay</p>
+    </footer>
+  </body>
+</html>
