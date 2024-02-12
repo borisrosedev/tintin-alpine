@@ -1,3 +1,4 @@
+import { MyStorage } from "../services/my-storage.js";
 import Alpine from "../../node_modules/alpinejs/dist/module.esm.js";
 window.Alpine = Alpine;
 
@@ -10,14 +11,14 @@ class App {
     self.getProducts().then(async () => {
       Alpine.store("stock", {
         products: self.products,
-        amount: localStorage.getItem("amount")
-          ? await JSON.parse(localStorage.getItem("amount"))
-          : 0,
-        cart: localStorage.getItem("cart")
-          ? await JSON.parse(localStorage.getItem("cart"))
-          : [],
-
+        cartItemsNumber: await MyStorage.getData("cart-items-number"),
+        amount: await MyStorage.getData("amount"),
+        cart: await MyStorage.getData("cart"),
+      
         addToCart(product) {
+          this.cartItemsNumber += 1;
+
+          // Quantity logic
           const oldProduct = this.cart.find(
             (cartProduct) => cartProduct.product.id == product.id
           );
@@ -27,21 +28,23 @@ class App {
             const index = this.cart.indexOf(oldProduct);
             this.cart[index].quantity += 1;
           }
+
+          // AMOUNT SAVED
           this.amount += product.price * 1;
-          if (localStorage.getItem("amount")) {
-            localStorage.removeItem("amount");
-          }
-          localStorage.setItem("amount", JSON.stringify(this.amount));
-          if (localStorage.getItem("cart")) {
-            localStorage.removeItem("cart");
-          }
-          localStorage.setItem("cart", JSON.stringify(this.cart));
+          MyStorage.persistData("amount", this.amount);
+
+          //CART SAVED
+          MyStorage.persistData("cart", this.cart);
+
+          //ITEMS NUMBER SAVED
+          MyStorage.persistData("cart-items-number", this.cartItemsNumber)
         },
       });
 
       Alpine.start();
     });
   }
+
   async getProducts() {
     const result = await fetch("../database/products.json");
     this.products = await result.json();

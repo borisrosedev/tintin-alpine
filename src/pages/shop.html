@@ -53,8 +53,8 @@
           <li>
             <a href="./cart.html" class="cart-anchor">
               <i class="fa-solid fa-bag-shopping"></i>
-              <template x-if="$store.stock.cart.length">
-                <span aria-label="" x-text="$store.stock.cart.length" class="cart-length-span"></span>
+              <template x-if="$store.stock.cartItemsNumber > 0">
+                <span aria-label="" x-text="$store.stock.cartItemsNumber" class="cart-length-span"></span>
               </template>
             </a>
           </li>
