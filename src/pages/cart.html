@@ -56,52 +56,47 @@
       </nav>
     </header>
     <main class="cart__main page">
-      <section>
-        <table class="table" border="collapse">
-          <thead>
-            <th scope="col">Nom</th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Prix</th>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">
-                <figure>
-                  <img
-                    src="../../public/assets/images/tintin.jpg"
-                    alt="tintin"
-                  />
-                </figure>
-                <span aria-label="nom de la figurine">Tintin </span>
-              </th>
-              <td>1</td>
-              <td>70€</td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <figure>
-                  <img
-                    src="../../public/assets/images/haddock.jpg"
-                    alt="haddock"
-                  />
-                </figure>
-                <span aria-label="nom de la figurine">Haddock</span>
-              </th>
-              <td>1</td>
-              <td>25€</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th scope="row" colspan="2">Montant total</th>
-              <td>95€</td>
-            </tr>
-          </tfoot>
-        </table>
+      <section x-data>
+        <template x-if="$store.stock.cart.length">
+          <table class="table" border="collapse">
+            <thead>
+              <th scope="col">Nom</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Prix</th>
+            </thead>
+            <tbody>
+              <template x-for="cartProduct in $store.stock.cart">
+                <tr>
+                  <th scope="row">
+                    <figure>
+                      <img
+                        :src="cartProduct.product.url"
+                        :alt="cartProduct.product.name"
+                      />
+                    </figure>
+                    <span
+                      aria-label="nom de la figurine"
+                      x-text="cartProduct.product.name"
+                    ></span>
+                  </th>
+                  <td x-text="cartProduct.quantity"></td>
+                  <td x-text="cartProduct.product.price"></td>
+                </tr>
+              </template>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="2">Montant total</th>
+                <td x-text="$store.stock.amount"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </template>
       </section>
     </main>
     <footer class="app__footer fixed-bottom">
       <p>Toutes les images sont sous &copy; Pixabay</p>
     </footer>
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>

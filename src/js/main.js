@@ -6,33 +6,38 @@ class App {
     this.init();
   }
   init() {
-    const self = this
-    self.getProducts().then(() => {
+    const self = this;
+    self.getProducts().then(async () => {
       Alpine.store("stock", {
         products: self.products,
-
-        cart: [],
+        amount: localStorage.getItem("amount")
+          ? await JSON.parse(localStorage.getItem("amount"))
+          : 0,
+        cart: localStorage.getItem("cart")
+          ? await JSON.parse(localStorage.getItem("cart"))
+          : [],
 
         addToCart(product) {
-            console.log('product', product)
-            console.log('this.cart', this.cart)
-            if(this.cart.length){
-                console.log('this.cart[0]', this.cart[0].product.id)
-            }
-          const oldProduct = this.cart.find((cartProduct) => cartProduct.product.id == product.id);
-          if(!oldProduct){
-            this.cart.push({ product: product, quantity: 1});  
+          const oldProduct = this.cart.find(
+            (cartProduct) => cartProduct.product.id == product.id
+          );
+          if (!oldProduct) {
+            this.cart.push({ product: product, quantity: 1 });
           } else {
-            console.log('26 cart', this.cart)
             const index = this.cart.indexOf(oldProduct);
-            console.log('index', index)
             this.cart[index].quantity += 1;
           }
-          console.log('this.cart', this.cart)
+          this.amount += product.price * 1;
+          if (localStorage.getItem("amount")) {
+            localStorage.removeItem("amount");
+          }
+          localStorage.setItem("amount", JSON.stringify(this.amount));
+          if (localStorage.getItem("cart")) {
+            localStorage.removeItem("cart");
+          }
+          localStorage.setItem("cart", JSON.stringify(this.cart));
         },
       });
-
-
 
       Alpine.start();
     });

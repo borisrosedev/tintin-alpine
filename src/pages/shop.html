@@ -27,7 +27,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body x-data>
     <div aria-label="outlay du spinner" class="app__spinner">
       <div class="outer__spinner">
         <figure class="inner__spinner">
@@ -51,8 +51,11 @@
             </a>
           </li>
           <li>
-            <a href="./cart.html">
+            <a href="./cart.html" class="cart-anchor">
               <i class="fa-solid fa-bag-shopping"></i>
+              <template x-if="$store.stock.cart.length">
+                <span aria-label="" x-text="$store.stock.cart.length" class="cart-length-span"></span>
+              </template>
             </a>
           </li>
           <li>
@@ -67,7 +70,7 @@
       <header>
         <h1>Les figurines sur le thème de Tintin et Milou</h1>
       </header>
-      <section x-data>
+      <section >
         <template x-for="product in $store.stock.products">
           <article>
             <figure>
@@ -88,7 +91,7 @@
               <p x-text="product.description"></p>
               <button @click="$store.stock.addToCart(product)">
                 <section><p>Ajouter au panier</p></section>
-                <section><span x-text="product.price"></span></section>
+                <section><span x-text="`${product.price} €`"></span></section>
               </button>
             </section>
           </article>

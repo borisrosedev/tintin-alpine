@@ -1,41 +1,32 @@
 .table {
-
-    max-width: 500px;
-    background-color: var(--forth-color);
-
+  max-width: 500px;
+  background-color: var(--forth-color);
 }
 
-
-.table tbody th  {
-
-    display: flex;
-    align-items: center;
-
-    
-
+.table tbody th {
+  display: flex;
+  align-items: center;
 }
 
-.table tbody :nth-child(2), .table tbody :nth-child(3)  {
-    text-align: center;
-    width: 100px;
- 
+.table tbody :nth-child(2),
+.table tbody :nth-child(3) {
+  text-align: center;
+  width: 100px;
 }
 
 .table figure {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .table span {
+  margin: auto 5px;
+  display: block;
 
-    margin: auto 5px;
-    display: block;
- 
-    text-align: center;
-    width: 100px;
+  text-align: center;
+  width: 100px;
 }
 
 .table tfoot tr :nth-child(2) {
-    text-align: center;
+  text-align: center;
 }
-
